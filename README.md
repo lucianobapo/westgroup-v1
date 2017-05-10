@@ -1,5 +1,16 @@
 # westgroup-v1
 
+## Comandos para iniciar
+```shell
+cd /home/luciano/code/ && \
+git clone https://github.com/lucianobapo/westgroup-v1.git && \
+cd westgroup-v1 && composer install && \
+php artisan vendor:publish --tag=publicSaas && \
+php artisan vendor:publish --tag=erpnetPermissions && \
+chmod +x permissions.sh && \
+sudo ./permissions.sh
+```
+
 ## Comandos para iniciar o desenvolvimento
 ```shell
 base_dir=/home/luciano/ && \
