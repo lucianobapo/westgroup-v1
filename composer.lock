@@ -4,8 +4,110 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "a2dae3daed1e7f4f0a92cf99c6f792ec",
+    "content-hash": "09a6b6e0e7ae79aa4a722cf4fcb27081",
     "packages": [
+        {
+            "name": "barryvdh/laravel-cors",
+            "version": "v0.8.6",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/barryvdh/laravel-cors.git",
+                "reference": "9bf14c1d5ebe46738e8c535e56e621f98779197d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/barryvdh/laravel-cors/zipball/9bf14c1d5ebe46738e8c535e56e621f98779197d",
+                "reference": "9bf14c1d5ebe46738e8c535e56e621f98779197d",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": "5.1.x|5.2.x|5.3.x|5.4.x",
+                "php": ">=5.5.9",
+                "symfony/http-foundation": "~2.7|~3.0",
+                "symfony/http-kernel": "~2.7|~3.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^4.8|^5.2"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "0.8-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Barryvdh\\Cors\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Barry vd. Heuvel",
+                    "email": "barryvdh@gmail.com"
+                }
+            ],
+            "description": "Adds CORS (Cross-Origin Resource Sharing) headers support in your Laravel application",
+            "keywords": [
+                "api",
+                "cors",
+                "crossdomain",
+                "laravel"
+            ],
+            "time": "2017-02-15T21:21:33+00:00"
+        },
+        {
+            "name": "barryvdh/laravel-translation-manager",
+            "version": "v0.2.8",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/barryvdh/laravel-translation-manager.git",
+                "reference": "b18e9065d55a9b37e2f689cd35a0963dea4e944b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/barryvdh/laravel-translation-manager/zipball/b18e9065d55a9b37e2f689cd35a0963dea4e944b",
+                "reference": "b18e9065d55a9b37e2f689cd35a0963dea4e944b",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": "5.0.x|5.1.x|5.2.x|5.3.x|5.4.x",
+                "illuminate/translation": "5.0.x|5.1.x|5.2.x|5.3.x|5.4.x",
+                "php": ">=5.4.0",
+                "symfony/finder": "~2.3|~3.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "0.2-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Barryvdh\\TranslationManager\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Barry vd. Heuvel",
+                    "email": "barryvdh@gmail.com"
+                }
+            ],
+            "description": "Manage Laravel Translations",
+            "keywords": [
+                "laravel",
+                "translations",
+                "translator"
+            ],
+            "time": "2017-03-14T08:39:43+00:00"
+        },
         {
             "name": "dingo/api",
             "version": "v1.1",
@@ -648,17 +750,115 @@
             "time": "2017-03-20T17:10:46+00:00"
         },
         {
+            "name": "ilhanet/erpnet-migrates",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/lucianobapo/erpnet-migrates.git",
+                "reference": "6aecec65e4b598a4cb92ef825ba72169d1adcafa"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/lucianobapo/erpnet-migrates/zipball/6aecec65e4b598a4cb92ef825ba72169d1adcafa",
+                "reference": "6aecec65e4b598a4cb92ef825ba72169d1adcafa",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.6.4"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "ErpNET\\Migrates\\": "src/"
+                }
+            },
+            "autoload-dev": {
+                "psr-4": {
+                    "ErpNET\\MigratesTests\\": "tests/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Luciano Porto",
+                    "email": "luciano.bapo@gmail.com"
+                }
+            ],
+            "support": {
+                "source": "https://github.com/lucianobapo/erpnet-migrates/tree/master",
+                "issues": "https://github.com/lucianobapo/erpnet-migrates/issues"
+            },
+            "time": "2017-05-09T19:45:57+00:00"
+        },
+        {
+            "name": "ilhanet/erpnet-models",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/lucianobapo/erpnet-models.git",
+                "reference": "78fd25d5f754ce51d701d3d42fc38074c85422df"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/lucianobapo/erpnet-models/zipball/78fd25d5f754ce51d701d3d42fc38074c85422df",
+                "reference": "78fd25d5f754ce51d701d3d42fc38074c85422df",
+                "shasum": ""
+            },
+            "require": {
+                "barryvdh/laravel-cors": "^0.8.2",
+                "dingo/api": "^1.1",
+                "ext-bz2": "^7.1",
+                "ext-curl": "^7.1",
+                "ext-dom": "20031129",
+                "ext-gd": "^7.1",
+                "ext-intl": "^1.1",
+                "ext-json": "^1.5",
+                "ext-mbstring": "^7.1",
+                "ext-xml": "^7.1",
+                "ext-zip": "^1.13",
+                "php": ">=5.6.4",
+                "prettus/l5-repository": "^2.6"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "ErpNET\\Models\\": "src/"
+                }
+            },
+            "autoload-dev": {
+                "psr-4": {
+                    "ErpNET\\ModelsTests\\": "tests/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Luciano Porto",
+                    "email": "luciano.bapo@gmail.com"
+                }
+            ],
+            "support": {
+                "source": "https://github.com/lucianobapo/erpnet-models/tree/master",
+                "issues": "https://github.com/lucianobapo/erpnet-models/issues"
+            },
+            "time": "2017-05-10T19:41:29+00:00"
+        },
+        {
             "name": "ilhanet/erpnet-permissions",
             "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/lucianobapo/erpnet-permissions.git",
-                "reference": "64c5e4d42fa8ce34fb66eec7ef00f46036819ac6"
+                "reference": "0541f65a962acb67d9be31aad701dc4d242d85ac"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/lucianobapo/erpnet-permissions/zipball/64c5e4d42fa8ce34fb66eec7ef00f46036819ac6",
-                "reference": "64c5e4d42fa8ce34fb66eec7ef00f46036819ac6",
+                "url": "https://api.github.com/repos/lucianobapo/erpnet-permissions/zipball/0541f65a962acb67d9be31aad701dc4d242d85ac",
+                "reference": "0541f65a962acb67d9be31aad701dc4d242d85ac",
                 "shasum": ""
             },
             "require": {
@@ -688,7 +888,7 @@
                 "source": "https://github.com/lucianobapo/erpnet-permissions/tree/master",
                 "issues": "https://github.com/lucianobapo/erpnet-permissions/issues"
             },
-            "time": "2017-05-07T22:43:26+00:00"
+            "time": "2017-05-08T15:05:46+00:00"
         },
         {
             "name": "ilhanet/erpnet-saas",
@@ -696,27 +896,40 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/lucianobapo/erpnet-saas.git",
-                "reference": "f8cf99e2e986e4f5e7f4c4384819a8dab578ba85"
+                "reference": "a472d7a58713be55e42ed7133d2adfe8cab2a76e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/lucianobapo/erpnet-saas/zipball/f8cf99e2e986e4f5e7f4c4384819a8dab578ba85",
-                "reference": "f8cf99e2e986e4f5e7f4c4384819a8dab578ba85",
+                "url": "https://api.github.com/repos/lucianobapo/erpnet-saas/zipball/a472d7a58713be55e42ed7133d2adfe8cab2a76e",
+                "reference": "a472d7a58713be55e42ed7133d2adfe8cab2a76e",
                 "shasum": ""
             },
             "require": {
                 "dingo/api": "^1.1",
                 "dompdf/dompdf": "^0.8.0",
                 "erusev/parsedown": "^1.6",
+                "ext-bz2": "^7.1",
+                "ext-curl": "^7.1",
+                "ext-dom": "20031129",
+                "ext-gd": "^7.1",
+                "ext-intl": "^1.1",
+                "ext-json": "^1.5",
+                "ext-mbstring": "^7.1",
+                "ext-xml": "^7.1",
+                "ext-zip": "^1.13",
                 "guzzlehttp/guzzle": "^6.2",
+                "ilhanet/erpnet-models": "dev-master",
                 "laravel/cashier": "^7.0",
-                "php": "^5.5.9 || ^7.0"
+                "php": ">=5.6.4"
             },
             "type": "library",
             "autoload": {
                 "psr-4": {
                     "ErpNET\\Saas\\": "src/"
-                }
+                },
+                "files": [
+                    "src/helpers.php"
+                ]
             },
             "autoload-dev": {
                 "psr-4": {
@@ -736,7 +949,7 @@
                 "source": "https://github.com/lucianobapo/erpnet-saas/tree/master",
                 "issues": "https://github.com/lucianobapo/erpnet-saas/issues"
             },
-            "time": "2017-05-07T13:10:49+00:00"
+            "time": "2017-05-10T20:55:18+00:00"
         },
         {
             "name": "jakub-onderka/php-console-color",
@@ -827,16 +1040,16 @@
         },
         {
             "name": "laravel/cashier",
-            "version": "v7.0.8",
+            "version": "v7.0.9",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/cashier.git",
-                "reference": "4eb6a87f4f4b2faa839e73535c68a5d8d851bf20"
+                "reference": "adcc91cb58261a19ea2ca4373d4e80585f008bef"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/cashier/zipball/4eb6a87f4f4b2faa839e73535c68a5d8d851bf20",
-                "reference": "4eb6a87f4f4b2faa839e73535c68a5d8d851bf20",
+                "url": "https://api.github.com/repos/laravel/cashier/zipball/adcc91cb58261a19ea2ca4373d4e80585f008bef",
+                "reference": "adcc91cb58261a19ea2ca4373d4e80585f008bef",
                 "shasum": ""
             },
             "require": {
@@ -883,20 +1096,20 @@
                 "laravel",
                 "stripe"
             ],
-            "time": "2017-02-19T16:16:48+00:00"
+            "time": "2017-03-28T13:05:23+00:00"
         },
         {
             "name": "laravel/framework",
-            "version": "v5.4.21",
+            "version": "v5.4.22",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "2ed668f96d1a6ca42f50d5c87ee9ceecfc0a6eee"
+                "reference": "fc5c7a18644f231bcb8d02f4ec2f3a2517f5015d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/2ed668f96d1a6ca42f50d5c87ee9ceecfc0a6eee",
-                "reference": "2ed668f96d1a6ca42f50d5c87ee9ceecfc0a6eee",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/fc5c7a18644f231bcb8d02f4ec2f3a2517f5015d",
+                "reference": "fc5c7a18644f231bcb8d02f4ec2f3a2517f5015d",
                 "shasum": ""
             },
             "require": {
@@ -1012,7 +1225,7 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2017-04-28T15:40:01+00:00"
+            "time": "2017-05-08T21:45:45+00:00"
         },
         {
             "name": "laravel/tinker",
@@ -1714,6 +1927,106 @@
             "time": "2016-11-25T06:54:22+00:00"
         },
         {
+            "name": "prettus/l5-repository",
+            "version": "2.6.18",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/andersao/l5-repository.git",
+                "reference": "5fbab77b9f295f0c3d2bb1f8b1e42f6ff0affad7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/andersao/l5-repository/zipball/5fbab77b9f295f0c3d2bb1f8b1e42f6ff0affad7",
+                "reference": "5fbab77b9f295f0c3d2bb1f8b1e42f6ff0affad7",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/config": "~5.0",
+                "illuminate/console": "~5.0",
+                "illuminate/database": "~5.0",
+                "illuminate/filesystem": "~5.0",
+                "illuminate/http": "~5.0",
+                "illuminate/pagination": "~5.0",
+                "illuminate/support": "~5.0",
+                "prettus/laravel-validation": "1.1.*"
+            },
+            "suggest": {
+                "league/fractal": "Required to use the Fractal Presenter (0.12.*).",
+                "robclancy/presenter": "Required to use the Presenter Model (1.3.*)"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-develop": "2.2-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Prettus\\Repository\\": "src/Prettus/Repository/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Anderson Andrade",
+                    "email": "contato@andersonandra.de",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Laravel 5 - Repositories to  the database layer",
+            "keywords": [
+                "cache",
+                "eloquent",
+                "laravel",
+                "model",
+                "repository"
+            ],
+            "time": "2017-03-29T10:49:41+00:00"
+        },
+        {
+            "name": "prettus/laravel-validation",
+            "version": "1.1.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/andersao/laravel-validator.git",
+                "reference": "c3501ba6b6312b8e98098783901060c0aff2b29d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/andersao/laravel-validator/zipball/c3501ba6b6312b8e98098783901060c0aff2b29d",
+                "reference": "c3501ba6b6312b8e98098783901060c0aff2b29d",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": "~5.0|~5.1",
+                "illuminate/validation": "~5.0|~5.1",
+                "php": ">=5.4.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Prettus\\Validator\\": "src/Prettus/Validator/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "authors": [
+                {
+                    "name": "Anderson Andrade",
+                    "email": "contato@andersonandra.de"
+                }
+            ],
+            "description": "Laravel Validation Service",
+            "keywords": [
+                "laravel",
+                "service",
+                "validation"
+            ],
+            "time": "2015-06-08T23:53:46+00:00"
+        },
+        {
             "name": "psr/http-message",
             "version": "1.0.1",
             "source": {
@@ -2008,16 +2321,16 @@
         },
         {
             "name": "stripe/stripe-php",
-            "version": "v4.9.0",
+            "version": "v4.9.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/stripe/stripe-php.git",
-                "reference": "0757eb4911b3c541cf5c54bc4fc9c0c0c0ae26fc"
+                "reference": "1ce201a9fb8bda96e87789f4cd952518f37b88e0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/stripe/stripe-php/zipball/0757eb4911b3c541cf5c54bc4fc9c0c0c0ae26fc",
-                "reference": "0757eb4911b3c541cf5c54bc4fc9c0c0c0ae26fc",
+                "url": "https://api.github.com/repos/stripe/stripe-php/zipball/1ce201a9fb8bda96e87789f4cd952518f37b88e0",
+                "reference": "1ce201a9fb8bda96e87789f4cd952518f37b88e0",
                 "shasum": ""
             },
             "require": {
@@ -2059,20 +2372,20 @@
                 "payment processing",
                 "stripe"
             ],
-            "time": "2017-04-28T16:44:39+00:00"
+            "time": "2017-05-10T18:53:00+00:00"
         },
         {
             "name": "swiftmailer/swiftmailer",
-            "version": "v5.4.7",
+            "version": "v5.4.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/swiftmailer/swiftmailer.git",
-                "reference": "56db4ed32a6d5c9824c3ecc1d2e538f663f47eb4"
+                "reference": "9a06dc570a0367850280eefd3f1dc2da45aef517"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/swiftmailer/swiftmailer/zipball/56db4ed32a6d5c9824c3ecc1d2e538f663f47eb4",
-                "reference": "56db4ed32a6d5c9824c3ecc1d2e538f663f47eb4",
+                "url": "https://api.github.com/repos/swiftmailer/swiftmailer/zipball/9a06dc570a0367850280eefd3f1dc2da45aef517",
+                "reference": "9a06dc570a0367850280eefd3f1dc2da45aef517",
                 "shasum": ""
             },
             "require": {
@@ -2113,7 +2426,7 @@
                 "mail",
                 "mailer"
             ],
-            "time": "2017-04-20T17:32:18+00:00"
+            "time": "2017-05-01T15:54:03+00:00"
         },
         {
             "name": "symfony/console",
@@ -4276,6 +4589,8 @@
     "minimum-stability": "stable",
     "stability-flags": {
         "ilhanet/erpnet-permissions": 20,
+        "ilhanet/erpnet-migrates": 20,
+        "ilhanet/erpnet-models": 20,
         "ilhanet/erpnet-saas": 20
     },
     "prefer-stable": false,

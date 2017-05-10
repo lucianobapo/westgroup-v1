@@ -1,4 +1,19 @@
 #!/bin/sh
+#fix to Lang files
+chown luciano:www-data -R resources/lang/
+chmod -R ug+w resources/lang/
+chmod -R o-w resources/lang/
+
+find resources/lang/ -type f -exec chmod ugo-x {} \;
+find resources/lang/ -type d -exec chmod ugo+x {} \;
+
+find resources/lang/ -type f -exec chmod g-s {} \;
+find resources/lang/ -type d -exec chmod g+s {} \;
+
+setfacl -dR -m u::rwx resources/lang/
+setfacl -dR -m g::rwx resources/lang/
+
+
 #fix to Debugbar files
 chown luciano:www-data -R storage/debugbar/
 chmod -R ug+w storage/debugbar/

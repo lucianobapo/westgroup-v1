@@ -1,21 +1,22 @@
 <?php
 
-use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
-use Illuminate\Database\Migrations\Migration;
+use ErpNET\Migrates\BaseMigration;
 
-class CreatePasswordResetsTable extends Migration
+class CreatePasswordResetsTable extends BaseMigration
 {
+    protected $table = 'password_resets';
+
     /**
      * Run the migrations.
      *
      * @return void
      */
-    public function up()
+    public function upMigration()
     {
-        Schema::create('password_resets', function (Blueprint $table) {
+        $this->createTable(function(Blueprint $table){
             $table->string('email')->index();
-            $table->string('token');
+            $table->string('token')->index();
             $table->timestamp('created_at')->nullable();
         });
     }
@@ -25,8 +26,8 @@ class CreatePasswordResetsTable extends Migration
      *
      * @return void
      */
-    public function down()
+    public function downMigration()
     {
-        Schema::dropIfExists('password_resets');
+        $this->dropTable();
     }
 }

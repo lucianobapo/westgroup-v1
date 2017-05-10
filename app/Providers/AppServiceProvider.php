@@ -28,5 +28,15 @@ class AppServiceProvider extends ServiceProvider
 
         if (class_exists(\ErpNET\Permissions\Providers\ErpnetPermissionsServiceProvider::class))
             $this->app->register(\ErpNET\Permissions\Providers\ErpnetPermissionsServiceProvider::class);
+
+        if (class_exists(\Barryvdh\TranslationManager\ManagerServiceProvider::class))
+            $this->app->register(\Barryvdh\TranslationManager\ManagerServiceProvider::class);
+
+
+        if (class_exists(\ErpNET\Migrates\Providers\ErpnetMigratesServiceProvider::class))
+            $this->app->register(\ErpNET\Migrates\Providers\ErpnetMigratesServiceProvider::class);
+
+//        if (class_exists(\ErpNET\Models\Providers\ErpnetModelsServiceProvider::class))
+//            $this->app->register(\ErpNET\Models\Providers\ErpnetModelsServiceProvider::class);
     }
 }

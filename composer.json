@@ -15,7 +15,10 @@
         "ext-mbstring": "^7.1",
         "ext-xml": "^7.1",
         "ext-zip": "^1.13",
+        "barryvdh/laravel-translation-manager": "^0.2.8",
         "ilhanet/erpnet-permissions": "dev-master",
+        "ilhanet/erpnet-migrates": "dev-master",
+        "ilhanet/erpnet-models": "dev-master",
         "ilhanet/erpnet-saas": "dev-master",
         "laravel/framework": "5.4.*",
         "laravel/tinker": "~1.0"
@@ -29,6 +32,18 @@
         {
             "type": "vcs",
             "url": "https://github.com/lucianobapo/erpnet-saas.git"
+        },
+        {
+            "type": "vcs",
+            "url": "https://github.com/lucianobapo/erpnet-migrates.git"
+        },
+        {
+            "type": "vcs",
+            "url": "https://github.com/lucianobapo/erpnet-models.git"
+        },
+        {
+            "type": "vcs",
+            "url": "https://github.com/lucianobapo/erpnet-file-manager.git"
         },
         {
             "type": "vcs",
