@@ -2,9 +2,10 @@
 
 ## Comandos para iniciar
 ```shell
+ssh westgroup.ilhanet.com
 cd /home/luciano/code/ && \
 git clone https://github.com/lucianobapo/westgroup-v1.git && \
-cd westgroup-v1 && composer install && \
+cd /home/luciano/code/westgroup-v1 && composer install && \
 php artisan vendor:publish --tag=publicSaas && \
 php artisan vendor:publish --tag=erpnetPermissions && \
 chmod +x permissions.sh && \
