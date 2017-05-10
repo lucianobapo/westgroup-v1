@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "09a6b6e0e7ae79aa4a722cf4fcb27081",
+    "content-hash": "07a32101d7af8763ec35b273c64dbddd",
     "packages": [
         {
             "name": "barryvdh/laravel-cors",
@@ -798,26 +798,26 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/lucianobapo/erpnet-models.git",
-                "reference": "78fd25d5f754ce51d701d3d42fc38074c85422df"
+                "reference": "f2a3255f6d05562f84cf53fd9f46c0e41822afec"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/lucianobapo/erpnet-models/zipball/78fd25d5f754ce51d701d3d42fc38074c85422df",
-                "reference": "78fd25d5f754ce51d701d3d42fc38074c85422df",
+                "url": "https://api.github.com/repos/lucianobapo/erpnet-models/zipball/f2a3255f6d05562f84cf53fd9f46c0e41822afec",
+                "reference": "f2a3255f6d05562f84cf53fd9f46c0e41822afec",
                 "shasum": ""
             },
             "require": {
                 "barryvdh/laravel-cors": "^0.8.2",
                 "dingo/api": "^1.1",
-                "ext-bz2": "^7.1",
-                "ext-curl": "^7.1",
-                "ext-dom": "20031129",
-                "ext-gd": "^7.1",
-                "ext-intl": "^1.1",
-                "ext-json": "^1.5",
-                "ext-mbstring": "^7.1",
-                "ext-xml": "^7.1",
-                "ext-zip": "^1.13",
+                "ext-bz2": "*",
+                "ext-curl": "*",
+                "ext-dom": "*",
+                "ext-gd": "*",
+                "ext-intl": "*",
+                "ext-json": "*",
+                "ext-mbstring": "*",
+                "ext-xml": "*",
+                "ext-zip": "*",
                 "php": ">=5.6.4",
                 "prettus/l5-repository": "^2.6"
             },
@@ -845,7 +845,7 @@
                 "source": "https://github.com/lucianobapo/erpnet-models/tree/master",
                 "issues": "https://github.com/lucianobapo/erpnet-models/issues"
             },
-            "time": "2017-05-10T19:41:29+00:00"
+            "time": "2017-05-10T21:10:20+00:00"
         },
         {
             "name": "ilhanet/erpnet-permissions",
@@ -853,16 +853,16 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/lucianobapo/erpnet-permissions.git",
-                "reference": "0541f65a962acb67d9be31aad701dc4d242d85ac"
+                "reference": "19aa5895adc8c5691e9fa6828df29d997508f4ba"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/lucianobapo/erpnet-permissions/zipball/0541f65a962acb67d9be31aad701dc4d242d85ac",
-                "reference": "0541f65a962acb67d9be31aad701dc4d242d85ac",
+                "url": "https://api.github.com/repos/lucianobapo/erpnet-permissions/zipball/19aa5895adc8c5691e9fa6828df29d997508f4ba",
+                "reference": "19aa5895adc8c5691e9fa6828df29d997508f4ba",
                 "shasum": ""
             },
             "require": {
-                "php": "^5.5.9 || ^7.0"
+                "php": ">=5.6.4"
             },
             "type": "library",
             "autoload": {
@@ -888,7 +888,7 @@
                 "source": "https://github.com/lucianobapo/erpnet-permissions/tree/master",
                 "issues": "https://github.com/lucianobapo/erpnet-permissions/issues"
             },
-            "time": "2017-05-08T15:05:46+00:00"
+            "time": "2017-05-10T21:10:13+00:00"
         },
         {
             "name": "ilhanet/erpnet-saas",
@@ -896,27 +896,27 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/lucianobapo/erpnet-saas.git",
-                "reference": "a472d7a58713be55e42ed7133d2adfe8cab2a76e"
+                "reference": "16b82a206eabb7a72e8e3ddf19b6156a278e1c87"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/lucianobapo/erpnet-saas/zipball/a472d7a58713be55e42ed7133d2adfe8cab2a76e",
-                "reference": "a472d7a58713be55e42ed7133d2adfe8cab2a76e",
+                "url": "https://api.github.com/repos/lucianobapo/erpnet-saas/zipball/16b82a206eabb7a72e8e3ddf19b6156a278e1c87",
+                "reference": "16b82a206eabb7a72e8e3ddf19b6156a278e1c87",
                 "shasum": ""
             },
             "require": {
                 "dingo/api": "^1.1",
                 "dompdf/dompdf": "^0.8.0",
                 "erusev/parsedown": "^1.6",
-                "ext-bz2": "^7.1",
-                "ext-curl": "^7.1",
-                "ext-dom": "20031129",
-                "ext-gd": "^7.1",
-                "ext-intl": "^1.1",
-                "ext-json": "^1.5",
-                "ext-mbstring": "^7.1",
-                "ext-xml": "^7.1",
-                "ext-zip": "^1.13",
+                "ext-bz2": "*",
+                "ext-curl": "*",
+                "ext-dom": "*",
+                "ext-gd": "*",
+                "ext-intl": "*",
+                "ext-json": "*",
+                "ext-mbstring": "*",
+                "ext-xml": "*",
+                "ext-zip": "*",
                 "guzzlehttp/guzzle": "^6.2",
                 "ilhanet/erpnet-models": "dev-master",
                 "laravel/cashier": "^7.0",
@@ -949,7 +949,7 @@
                 "source": "https://github.com/lucianobapo/erpnet-saas/tree/master",
                 "issues": "https://github.com/lucianobapo/erpnet-saas/issues"
             },
-            "time": "2017-05-10T20:55:18+00:00"
+            "time": "2017-05-10T21:10:17+00:00"
         },
         {
             "name": "jakub-onderka/php-console-color",
@@ -4597,15 +4597,15 @@
     "prefer-lowest": false,
     "platform": {
         "php": ">=5.6.4",
-        "ext-bz2": "^7.1",
-        "ext-curl": "^7.1",
-        "ext-dom": "20031129",
-        "ext-gd": "^7.1",
-        "ext-intl": "^1.1",
-        "ext-json": "^1.5",
-        "ext-mbstring": "^7.1",
-        "ext-xml": "^7.1",
-        "ext-zip": "^1.13"
+        "ext-bz2": "*",
+        "ext-curl": "*",
+        "ext-dom": "*",
+        "ext-gd": "*",
+        "ext-intl": "*",
+        "ext-json": "*",
+        "ext-mbstring": "*",
+        "ext-xml": "*",
+        "ext-zip": "*"
     },
     "platform-dev": []
 }
