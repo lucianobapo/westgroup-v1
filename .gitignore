@@ -12,3 +12,4 @@ npm-debug.log
 .env.production
 /packages
 gulpfileErpnetSaas.js
+permissions.sh
