@@ -69,6 +69,7 @@ GRANT ALL PRIVILEGES ON DATABASE "westgroup-v1" to "westgroup-v1";
 ## Transferir mysql to postgre
 ```shell
 pgloader mysql://erpnet-v5:erpnet-v5@localhost/erpnet-v5 postgresql://westgroup-v1:westgroup-v1@localhost:5432/westgroup-v1
+pgloader mysql://erpnet-v5:erpnet-v5@localhost/erpnet-v5 postgresql://westgroup-v1:westgroup-v1@westgroup.ilhanet.com:5432/westgroup-v1
 ```
 
 [Site do GitHub](https://github.com/lucianobapo/westgroup-v1)
