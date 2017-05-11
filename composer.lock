@@ -798,12 +798,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/lucianobapo/erpnet-models.git",
-                "reference": "f2a3255f6d05562f84cf53fd9f46c0e41822afec"
+                "reference": "491f7e818ae3bd742617747d0f79fb2daf114a36"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/lucianobapo/erpnet-models/zipball/f2a3255f6d05562f84cf53fd9f46c0e41822afec",
-                "reference": "f2a3255f6d05562f84cf53fd9f46c0e41822afec",
+                "url": "https://api.github.com/repos/lucianobapo/erpnet-models/zipball/491f7e818ae3bd742617747d0f79fb2daf114a36",
+                "reference": "491f7e818ae3bd742617747d0f79fb2daf114a36",
                 "shasum": ""
             },
             "require": {
@@ -845,7 +845,7 @@
                 "source": "https://github.com/lucianobapo/erpnet-models/tree/master",
                 "issues": "https://github.com/lucianobapo/erpnet-models/issues"
             },
-            "time": "2017-05-10T21:10:20+00:00"
+            "time": "2017-05-11T14:35:08+00:00"
         },
         {
             "name": "ilhanet/erpnet-permissions",
@@ -896,12 +896,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/lucianobapo/erpnet-saas.git",
-                "reference": "16b82a206eabb7a72e8e3ddf19b6156a278e1c87"
+                "reference": "7d4de42b70f356e46fc83f9fcde2c96923e4e406"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/lucianobapo/erpnet-saas/zipball/16b82a206eabb7a72e8e3ddf19b6156a278e1c87",
-                "reference": "16b82a206eabb7a72e8e3ddf19b6156a278e1c87",
+                "url": "https://api.github.com/repos/lucianobapo/erpnet-saas/zipball/7d4de42b70f356e46fc83f9fcde2c96923e4e406",
+                "reference": "7d4de42b70f356e46fc83f9fcde2c96923e4e406",
                 "shasum": ""
             },
             "require": {
@@ -949,7 +949,7 @@
                 "source": "https://github.com/lucianobapo/erpnet-saas/tree/master",
                 "issues": "https://github.com/lucianobapo/erpnet-saas/issues"
             },
-            "time": "2017-05-10T21:10:17+00:00"
+            "time": "2017-05-11T19:13:00+00:00"
         },
         {
             "name": "jakub-onderka/php-console-color",
