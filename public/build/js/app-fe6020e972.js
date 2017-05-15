@@ -30665,7 +30665,7 @@ require('./core/bootstrap');
 
 new Vue(require('./spark'));
 
-},{"./core/bootstrap":95,"./spark":115}],92:[function(require,module,exports){
+},{"./core/bootstrap":95,"./spark":116}],92:[function(require,module,exports){
 'use strict';
 
 Vue.component('spark-simple-registration-screen', {
@@ -31145,7 +31145,7 @@ Vue.component('spark-error-alert', {
  * Vue is the JavaScript framework used by Spark.
  */
 if (window.Vue === undefined) {
-  window.Vue = require('vue');
+    window.Vue = require('vue');
 }
 
 require('vue-resource');
@@ -31161,21 +31161,21 @@ window.Promise = require('promise');
  * Load Underscore.js, used for map / reduce on arrays.
  */
 if (window._ === undefined) {
-  window._ = require('underscore');
+    window._ = require('underscore');
 }
 
 /*
  * Load Moment.js, used for date formatting and presentation.
  */
 if (window.moment === undefined) {
-  window.moment = require('moment');
+    window.moment = require('moment');
 }
 
 /*
  * Load jQuery and Bootstrap jQuery, used for front-end interaction.
  */
 if (window.$ === undefined || window.jQuery === undefined) {
-  window.$ = window.jQuery = require('jquery');
+    window.$ = window.jQuery = require('jquery');
 }
 
 require('bootstrap-sass/assets/javascripts/bootstrap');
@@ -31184,11 +31184,23 @@ require('bootstrap-sass/assets/javascripts/bootstrap');
  * Define the Spark component extension points.
  */
 Spark.components = {
-  employee: {},
-  profileBasics: {},
-  teamOwnerBasics: {},
-  editTeamMember: {},
-  navDropdown: {}
+    config: {},
+    trans: {},
+    data: {},
+    internalCourse: {},
+    employee: {},
+    profileBasics: {},
+    teamOwnerBasics: {},
+    editTeamMember: {},
+    navDropdown: {}
+};
+Spark.config = {
+    loading: false,
+    data: {}
+};
+Spark.trans = {
+    loading: false,
+    data: {}
 };
 
 /**
@@ -31196,7 +31208,7 @@ Spark.components = {
  */
 require('./../forms/bootstrap');
 
-},{"./../forms/bootstrap":99,"bootstrap-sass/assets/javascripts/bootstrap":3,"jquery":4,"moment":5,"promise":7,"underscore":15,"vue":89,"vue-resource":17}],96:[function(require,module,exports){
+},{"./../forms/bootstrap":100,"bootstrap-sass/assets/javascripts/bootstrap":3,"jquery":4,"moment":5,"promise":7,"underscore":15,"vue":89,"vue-resource":17}],96:[function(require,module,exports){
 'use strict';
 
 /**
@@ -31208,6 +31220,7 @@ require('./../auth/registration/simple');
 require('./../auth/registration/subscription');
 require('./../data');
 require('./../data/employee');
+require('./../data/internalCourse');
 require('./../settings/dashboard');
 require('./../settings/dashboard/profile/basics');
 require('./../settings/dashboard/subscription');
@@ -31219,17 +31232,49 @@ require('./../settings/team/owner/basics');
 require('./../settings/team/membership');
 require('./../settings/team/membership/edit-team-member');
 
-},{"./../auth/registration/simple":92,"./../auth/registration/subscription":93,"./../common/errors":94,"./../data":97,"./../data/employee":98,"./../nav":104,"./../settings/dashboard":105,"./../settings/dashboard/profile/basics":106,"./../settings/dashboard/security/password":107,"./../settings/dashboard/security/two-factor":108,"./../settings/dashboard/subscription":109,"./../settings/dashboard/teams":110,"./../settings/team":111,"./../settings/team/membership":112,"./../settings/team/membership/edit-team-member":113,"./../settings/team/owner/basics":114}],97:[function(require,module,exports){
+},{"./../auth/registration/simple":92,"./../auth/registration/subscription":93,"./../common/errors":94,"./../data":97,"./../data/employee":98,"./../data/internalCourse":99,"./../nav":105,"./../settings/dashboard":106,"./../settings/dashboard/profile/basics":107,"./../settings/dashboard/security/password":108,"./../settings/dashboard/security/two-factor":109,"./../settings/dashboard/subscription":110,"./../settings/dashboard/teams":111,"./../settings/team":112,"./../settings/team/membership":113,"./../settings/team/membership/edit-team-member":114,"./../settings/team/owner/basics":115}],97:[function(require,module,exports){
 'use strict';
 
-Vue.component('spark-data-screen', {
+Vue.component('spark-data-screen', $.extend(true, {
     /*
      * Bootstrap the component. Load the initial data.
      */
     ready: function ready() {
-        //
+        this.getConfig();
+    },
+
+    methods: {
+        getTrans: function getTrans() {
+            console.log('call getTrans');
+            if (!Spark.config.loading && _.keys(Spark.config.data).length > 0) {
+
+                this.$http.get('/erpnet-api/lang/' + Spark.config.data.defaultLocale + '/erpnetSaas').then(function (response) {
+                    Spark.config.loading = false;
+                    if (response.data.hasOwnProperty('data')) Spark.config.data.trans = response.data.data;
+                }, function (response) {
+                    Spark.config.loading = false;
+                    if (toastr) toastr.warning('Retrieving data Failed.', 'Fail Alert');
+                });
+            }
+        },
+        getConfig: function getConfig() {
+            var _this = this;
+
+            if (!Spark.config.loading && _.keys(Spark.config.data).length == 0) {
+                Spark.config.loading = true;
+                this.$http.get('/erpnet-api/config/erpnetSaas').then(function (response) {
+                    Spark.config.loading = false;
+                    if (response.data.hasOwnProperty('data')) Spark.config.data = response.data.data;
+                    _this.getTrans();
+                    // this.getItems(this.pagination.current_page);
+                }, function (response) {
+                    Spark.config.loading = false;
+                    if (toastr) toastr.warning('Retrieving data Failed.', 'Fail Alert');
+                });
+            }
+        }
     }
-});
+}, Spark.components.data));
 
 },{}],98:[function(require,module,exports){
 'use strict';
@@ -31239,7 +31284,7 @@ Vue.component('spark-data-employee-screen', $.extend(true, {
      * Bootstrap the component. Load the initial data.
      */
     ready: function ready() {
-        this.getConfig();
+        // this.getConfig();
     },
 
     /*
@@ -31263,19 +31308,6 @@ Vue.component('spark-data-employee-screen', $.extend(true, {
             formErrorsUpdate: {},
             columns: []
         };
-    },
-
-    events: {
-        /*
-         * Handle the "userRetrieved" event.
-         */
-        userRetrieved: function userRetrieved(user) {
-            this.user = user;
-
-            this.updateProfileBasicsFormForNewUser(user);
-
-            return true;
-        }
     },
 
     methods: {
@@ -31421,6 +31453,200 @@ Vue.component('spark-data-employee-screen', $.extend(true, {
 },{}],99:[function(require,module,exports){
 'use strict';
 
+Vue.component('spark-data-internal-course-screen', $.extend(true, {
+    /*
+     * Bootstrap the component. Load the initial data.
+     */
+    ready: function ready() {
+        // this.getConfig();
+
+        // this.getVueItems(this.pagination.current_page);
+        // if (_.keys(this.computedConfig).length>0)
+        this.getItems(this.pagination.current_page);
+
+        // console.log(this.computedConfig);
+        // console.log(this.computedItems);
+    },
+    /*
+     * Initial state of the component's data.
+     */
+    data: function data() {
+        return {
+            trans: [],
+            config: [],
+            items: [],
+            pagination: {
+                total: 0,
+                per_page: 2,
+                from: 1,
+                to: 0,
+                last_page: 1,
+                current_page: 1
+            },
+            offset: 2,
+            formErrors: {},
+            formErrorsUpdate: {},
+            columns: []
+        };
+    },
+    methods: {
+        getItems: function getItems(page) {
+            var _this = this;
+
+            if (_.keys(Spark.config.data).length > 0) {
+                var query = '';
+                if (page > 1) query = '?page=' + page;
+                this.$http.get(Spark.config.data.internalCourse.apiUrl + query).then(function (response) {
+                    if (response.data.hasOwnProperty('data')) _this.$set('items', response.data.data);
+                    if (response.data.hasOwnProperty('pagination')) _this.$set('pagination', response.data.pagination);
+                }, function (response) {
+                    if (toastr) toastr.warning('Retrieving data Failed.', 'Fail Alert');
+                });
+            }
+        },
+        getTrans: function getTrans(field) {
+            if (!Spark.trans.loading && _.keys(Spark.trans.data).length == 0 && _.keys(Spark.config.data).length > 0) {
+                this.$http.get('/erpnet-api/lang/' + Spark.config.data.defaultLocale + '/erpnetSaas').then(function (response) {
+                    Spark.trans.loading = false;
+                    if (response.data.hasOwnProperty('data')) Spark.trans.data = response.data.data;
+                }, function (response) {
+                    Spark.trans.loading = false;
+                    if (toastr) toastr.warning('Retrieving data Failed.', 'Fail Alert');
+                });
+            }
+        },
+        getConfig: function getConfig() {
+            var _this2 = this;
+
+            if (!Spark.config.loading && _.keys(Spark.config.data).length == 0) {
+                Spark.config.loading = true;
+                this.$http.get('/erpnet-api/config/erpnetSaas').then(function (response) {
+                    Spark.config.loading = false;
+                    if (response.data.hasOwnProperty('data')) Spark.config.data = response.data.data;
+                    // this.getTrans();
+                    _this2.getItems(_this2.pagination.current_page);
+                }, function (response) {
+                    Spark.config.loading = false;
+                    if (toastr) toastr.warning('Retrieving data Failed.', 'Fail Alert');
+                });
+            }
+        },
+        getVueItems: function getVueItems(page) {
+            var _this3 = this;
+
+            var query = '';
+            if (page > 1) query = '?page=' + page;
+            this.$http.get(this.getConfig('apiUrl') + query).then(function (response) {
+                if (response.data.hasOwnProperty('data')) _this3.$set('items', response.data.data);
+                if (response.data.hasOwnProperty('pagination')) _this3.$set('pagination', response.data.pagination);
+            }, function (response) {
+                if (toastr) toastr.warning('Retrieving data Failed.', 'Fail Alert');
+            });
+        },
+        createItem: function createItem() {
+            var _this4 = this;
+
+            var input = {};
+            this.columns.forEach(function (column) {
+                if (column.name != 'id') input[column.name] = column.fillItemModel;
+            });
+            input.mandante = this.config.defaultMandante;
+            // console.log(input);
+            this.$http.post(this.getConfig('apiUrl'), input).then(function (response) {
+                _this4.getVueItems(_this4.pagination.current_page);
+                _this4.changePage(_this4.pagination.current_page);
+                _this4.newItem = {};
+                $("#create-item").modal('hide');
+                if (toastr) toastr.success(response.data.message, 'Success Alert');
+            }, function (response) {
+                if (toastr) toastr.warning('Post data Failed.', 'Fail Alert');
+                _this4.formErrors = response.data;
+            });
+        },
+        newItem: function newItem(item) {
+            this.columns.forEach(function (column) {
+                column.fillItemModel = '';
+            });
+            $("#create-item").modal('show');
+        },
+        editItem: function editItem(item) {
+            this.columns.forEach(function (column) {
+                column.fillItemModel = item[column.name];
+            });
+            $("#edit-item").modal('show');
+        },
+        updateItem: function updateItem() {
+            var _this5 = this;
+
+            var input = {};
+            this.columns.forEach(function (column) {
+                input[column.name] = column.fillItemModel;
+            });
+            this.$http.put(this.getConfig('apiUrl') + '/' + input.id, input).then(function (response) {
+                _this5.changePage(_this5.pagination.current_page);
+                $("#edit-item").modal('hide');
+                if (toastr) toastr.success(response.data.message, 'Success Alert');
+            }, function (response) {
+                if (toastr) toastr.warning('Put data Failed.', 'Fail Alert');
+                _this5.formErrors = response.data;
+            });
+        },
+        deleteItem: function deleteItem(item) {
+            var _this6 = this;
+
+            this.$http.delete(this.getConfig('apiUrl') + '/' + item.id).then(function (response) {
+                _this6.changePage(_this6.pagination.current_page);
+                if (toastr) toastr.success(response.data.message, 'Success Alert');
+            }, function (response) {
+                if (toastr) toastr.warning('Delete data Failed.', 'Fail Alert');
+            });
+        },
+        changePage: function changePage(page) {
+            this.pagination.current_page = page;
+            this.getVueItems(page);
+        }
+    },
+
+    computed: {
+        isActived: function isActived() {
+            return this.pagination.current_page;
+        },
+        pagesNumber: function pagesNumber() {
+            if (!this.pagination.last_page > 1) {
+                return [];
+            }
+
+            var pagesArray = [];
+            for (var page = parseInt(this.pagination.current_page) - parseInt(this.offset); page <= parseInt(this.pagination.current_page) + parseInt(this.offset); page++) {
+                if (page > 0 && page <= this.pagination.last_page) pagesArray.push(page);
+            }
+            return pagesArray;
+        },
+        computedConfig: function computedConfig() {
+            console.log('call computedConfig');
+            if (_.keys(Spark.config.data).length > 0) {
+                // this.getItems(this.pagination.current_page);
+                return Spark.config.data;
+            }
+            return [];
+        },
+        computedItems: function computedItems() {
+            console.log('call computedItems');
+            if (_.keys(this.items).length > 0) return this.items;
+            this.getItems(this.pagination.current_page);
+            return [];
+        },
+        computedTrans: function computedTrans() {
+            console.log('call computedTrans');
+            if (_.keys(Spark.trans.data).length > 0) return Spark.trans.data;
+            return [];
+        }
+    }
+}, Spark.components.internalCourse));
+
+},{}],100:[function(require,module,exports){
+'use strict';
+
 /**
  * Initialize the Spark form extension points.
  */
@@ -31450,7 +31676,7 @@ $.extend(Spark, require('./http'));
  */
 require('./components');
 
-},{"./components":100,"./errors":101,"./http":102,"./instance":103}],100:[function(require,module,exports){
+},{"./components":101,"./errors":102,"./http":103,"./instance":104}],101:[function(require,module,exports){
 'use strict';
 
 /**
@@ -31525,7 +31751,7 @@ Vue.component('spark-select', {
 </div>'
 });
 
-},{}],101:[function(require,module,exports){
+},{}],102:[function(require,module,exports){
 'use strict';
 
 var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
@@ -31592,7 +31818,7 @@ window.SparkFormErrors = function () {
     };
 };
 
-},{}],102:[function(require,module,exports){
+},{}],103:[function(require,module,exports){
 'use strict';
 
 module.exports = {
@@ -31634,7 +31860,7 @@ module.exports = {
     }
 };
 
-},{}],103:[function(require,module,exports){
+},{}],104:[function(require,module,exports){
 "use strict";
 
 /**
@@ -31661,7 +31887,7 @@ window.SparkForm = function (data) {
     };
 };
 
-},{}],104:[function(require,module,exports){
+},{}],105:[function(require,module,exports){
 'use strict';
 
 Vue.component('spark-nav-bar-dropdown', $.extend(true, {
@@ -31696,7 +31922,7 @@ Vue.component('spark-nav-bar-dropdown', $.extend(true, {
     }
 }, Spark.components.navDropdown));
 
-},{}],105:[function(require,module,exports){
+},{}],106:[function(require,module,exports){
 'use strict';
 
 Vue.component('spark-settings-screen', {
@@ -31708,7 +31934,7 @@ Vue.component('spark-settings-screen', {
     }
 });
 
-},{}],106:[function(require,module,exports){
+},{}],107:[function(require,module,exports){
 'use strict';
 
 Vue.component('spark-settings-profile-basics-screen', $.extend(true, {
@@ -31770,7 +31996,7 @@ Vue.component('spark-settings-profile-basics-screen', $.extend(true, {
     }
 }, Spark.components.profileBasics));
 
-},{}],107:[function(require,module,exports){
+},{}],108:[function(require,module,exports){
 'use strict';
 
 Vue.component('spark-settings-security-password-screen', {
@@ -31825,7 +32051,7 @@ Vue.component('spark-settings-security-password-screen', {
     }
 });
 
-},{}],108:[function(require,module,exports){
+},{}],109:[function(require,module,exports){
 'use strict';
 
 Vue.component('spark-settings-security-two-factor-screen', {
@@ -31905,7 +32131,7 @@ Vue.component('spark-settings-security-two-factor-screen', {
     }
 });
 
-},{}],109:[function(require,module,exports){
+},{}],110:[function(require,module,exports){
 'use strict';
 
 var settingsSubscriptionScreenForms = {
@@ -32456,7 +32682,7 @@ Vue.component('spark-settings-subscription-screen', {
     }
 });
 
-},{}],110:[function(require,module,exports){
+},{}],111:[function(require,module,exports){
 'use strict';
 
 Vue.component('spark-settings-teams-screen', {
@@ -32612,7 +32838,7 @@ Vue.component('spark-settings-teams-screen', {
     }
 });
 
-},{}],111:[function(require,module,exports){
+},{}],112:[function(require,module,exports){
 'use strict';
 
 Vue.component('spark-team-settings-screen', {
@@ -32669,7 +32895,7 @@ Vue.component('spark-team-settings-screen', {
     }
 });
 
-},{}],112:[function(require,module,exports){
+},{}],113:[function(require,module,exports){
 'use strict';
 
 Vue.component('spark-team-settings-membership-screen', {
@@ -32847,7 +33073,7 @@ Vue.component('spark-team-settings-membership-screen', {
     }
 });
 
-},{}],113:[function(require,module,exports){
+},{}],114:[function(require,module,exports){
 'use strict';
 
 Vue.component('spark-team-settings-edit-team-member-screen', $.extend(true, {
@@ -32935,7 +33161,7 @@ Vue.component('spark-team-settings-edit-team-member-screen', $.extend(true, {
     }
 }, Spark.components.editTeamMember));
 
-},{}],114:[function(require,module,exports){
+},{}],115:[function(require,module,exports){
 'use strict';
 
 Vue.component('spark-team-settings-owner-basics-screen', $.extend(true, {
@@ -32996,7 +33222,7 @@ Vue.component('spark-team-settings-owner-basics-screen', $.extend(true, {
     }
 }, Spark.components.teamOwnerBasics));
 
-},{}],115:[function(require,module,exports){
+},{}],116:[function(require,module,exports){
 'use strict';
 
 /*

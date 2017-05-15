@@ -51,7 +51,7 @@ if [ -h ${packages_dir}erpnet-permissions ]; then cd ${code_dir}erpnet-permissio
 if [ -h ${packages_dir}erpnet-saas ]; then cd ${code_dir}erpnet-saas && git cmt; fi || true && \
 if [ -h ${packages_dir}erpnet-migrates ]; then cd ${code_dir}erpnet-migrates && git cmt; fi || true && \
 if [ -h ${packages_dir}erpnet-models ]; then cd ${code_dir}erpnet-models && git cmt; fi || true && \
-cd ${code_dir}westgroup-v1 && composer update
+cd ${code_dir}westgroup-v1 && composer update ilhanet/erpnet-models ilhanet/erpnet-migrates ilhanet/erpnet-saas ilhanet/erpnet-permissions --prefer-source --profile --root-reqs
 ```
 
 ## Subir docker
@@ -68,7 +68,7 @@ GRANT ALL PRIVILEGES ON DATABASE "westgroup-v1" to "westgroup-v1";
 
 ## Transferir mysql to postgre
 ```shell
-pgloader mysql://erpnet-v5:erpnet-v5@localhost/erpnet-v5 postgresql://westgroup-v1:westgroup-v1@localhost:5432/westgroup-v1
+pgloader mysql://westgroup-v1:westgroup-v1@localhost/westgroup-v1 postgresql://westgroup-v1:westgroup-v1@localhost:5432/westgroup-v1
 pgloader mysql://erpnet-v5:erpnet-v5@localhost/erpnet-v5 postgresql://westgroup-v1:westgroup-v1@westgroup.ilhanet.com:5432/westgroup-v1
 ```
 

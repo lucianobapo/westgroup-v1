@@ -18,6 +18,16 @@ return [
          *   ],
          * ],
          */
+        'curso_interno' => [
+            'fields' => [
+                'id',
+                'nome',
+                'carga_horaria',
+                'holograma',
+                'validade',
+                'anexo',
+            ],
+        ],
         'users' => [
             'fields' => [
                 'mandante',

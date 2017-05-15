@@ -896,12 +896,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/lucianobapo/erpnet-saas.git",
-                "reference": "7d4de42b70f356e46fc83f9fcde2c96923e4e406"
+                "reference": "d19764ef2c4e2c7f93ea7a47e7da7ff86e081b01"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/lucianobapo/erpnet-saas/zipball/7d4de42b70f356e46fc83f9fcde2c96923e4e406",
-                "reference": "7d4de42b70f356e46fc83f9fcde2c96923e4e406",
+                "url": "https://api.github.com/repos/lucianobapo/erpnet-saas/zipball/d19764ef2c4e2c7f93ea7a47e7da7ff86e081b01",
+                "reference": "d19764ef2c4e2c7f93ea7a47e7da7ff86e081b01",
                 "shasum": ""
             },
             "require": {
@@ -949,7 +949,7 @@
                 "source": "https://github.com/lucianobapo/erpnet-saas/tree/master",
                 "issues": "https://github.com/lucianobapo/erpnet-saas/issues"
             },
-            "time": "2017-05-11T19:13:00+00:00"
+            "time": "2017-05-13 21:26:05"
         },
         {
             "name": "jakub-onderka/php-console-color",

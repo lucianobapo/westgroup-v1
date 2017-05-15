@@ -4,6 +4,7 @@
     "keywords": ["framework", "laravel", "stripe", "spark"],
     "license": "MIT",
     "type": "project",
+    "minimum-stability": "dev",
     "require": {
         "php": ">=5.6.4",
         "ext-bz2": "*",
@@ -15,6 +16,7 @@
         "ext-mbstring": "*",
         "ext-xml": "*",
         "ext-zip": "*",
+        "dingo/api": "dev-master",
         "barryvdh/laravel-translation-manager": "^0.2.8",
         "ilhanet/erpnet-permissions": "dev-master",
         "ilhanet/erpnet-migrates": "dev-master",
@@ -48,10 +50,6 @@
         {
             "type": "vcs",
             "url": "https://github.com/lucianobapo/erpnet-permissions.git"
-        },
-        {
-            "type": "vcs",
-            "url": "https://github.com/lucianobapo/api.git"
         }
     ],
     "autoload": {
