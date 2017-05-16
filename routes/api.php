@@ -30,24 +30,9 @@ $router
     ->version('v1', function (Router $router) use ($routeConfigV1) {
         $router
             ->group($routeConfigV1, function (Router $router) use ($routeConfigV1) {
-//                $router->get('appVersion', [
-//                    'as'=>'api.appVersion',
-//                    'uses'=> 'ApiController@appVersion'
-//                ]);
-//
-//                foreach (config('erpnetMigrates.tables') as $table => $config) {
-//                    $routePrefix = isset($config['routePrefix'])?$config['routePrefix']:str_singular($table);
-//                    $routeController = isset($config['routeController'])?$config['routeController']:(ucfirst(camel_case($routePrefix)).'Controller');
-//                    if(class_exists($routeConfigV1['namespace'].'\\'.$routeController)){
-//                        $router->resource($routePrefix, $routeController);
-//                        $router->get('/'.$routePrefix.'/{'.$routePrefix.'}/edit', ['as'=>$routePrefix.'.edit', 'uses'=>$routeController.'@edit']);
-//                    }
-//                }
 
-//                if(array_has(config('erpnetMigrates.tables'),'partners'))
-//                    $router->delete('/partner/{partner}/deactivate', ['as'=>'partner.deactivate','uses'=> 'PartnerController@deactivate']);
-
-
-                $router->resource('cursoInterno', 'CursoInternoControler');
+                $router->resource('cursoInterno', 'CursoInternoController');
+                $router->resource('cursoExterno', 'CursoExternoController');
+                $router->resource('gestao', 'GestaoController');
             });
     });

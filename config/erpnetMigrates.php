@@ -18,6 +18,32 @@ return [
          *   ],
          * ],
          */
+        'gestao' => [
+            'fields' => [
+                'id',
+                'nome',
+                'curso',
+                'tipo',
+                'periodo',
+                'duracao',
+                'validade',
+                'status',
+                'nota_teorica',
+                'nota_pratica',
+                'certificado',
+            ],
+        ],
+        'curso_externo' => [
+            'fields' => [
+                'id',
+                'nome',
+                'carga_horaria',
+                'preco',
+                'empresa',
+                'validade',
+                'anexo',
+            ],
+        ],
         'curso_interno' => [
             'fields' => [
                 'id',

@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Repositories\CursoInternoRepositoryEloquent;
 use ErpNET\Models\v1\Controllers\ResourceController;
 
-class CursoInternoControler extends ResourceController
+class CursoInternoController extends ResourceController
 {
     protected $routeName = 'cursoInterno';
     protected $repositoryClass = CursoInternoRepositoryEloquent::class;

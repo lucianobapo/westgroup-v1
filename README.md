@@ -15,6 +15,8 @@ sudo ./permissions.sh
 
 ## Comandos para atualizar
 ```shell
+rsync -rvztPhe ssh westgroup.ilhanet.com:code/westgroup-v1/composer.lock /home/luciano/code/westgroup-v1/composer.lock
+
 rsync -rvztPhe ssh /home/luciano/code/westgroup-v1/.env.production westgroup.ilhanet.com:code/westgroup-v1/.env && \
 git cmt || true && ssh westgroup.ilhanet.com
 cd /home/luciano/code/westgroup-v1 && git pull && composer install && \
@@ -69,6 +71,7 @@ GRANT ALL PRIVILEGES ON DATABASE "westgroup-v1" to "westgroup-v1";
 ## Transferir mysql to postgre
 ```shell
 pgloader mysql://westgroup-v1:westgroup-v1@localhost/westgroup-v1 postgresql://westgroup-v1:westgroup-v1@localhost:5432/westgroup-v1
+pgloader mysql://westgroup-v1:westgroup-v1@localhost/westgroup-v1 postgresql://westgroup-v1:westgroup-v1@westgroup.ilhanet.com:5432/westgroup-v1
 pgloader mysql://erpnet-v5:erpnet-v5@localhost/erpnet-v5 postgresql://westgroup-v1:westgroup-v1@westgroup.ilhanet.com:5432/westgroup-v1
 ```
 
