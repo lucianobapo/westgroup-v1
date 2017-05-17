@@ -16,6 +16,7 @@ sudo ./permissions.sh
 ## Comandos para atualizar
 ```shell
 rsync -rvztPhe ssh westgroup.ilhanet.com:code/westgroup-v1/composer.lock /home/luciano/code/westgroup-v1/composer.lock
+rsync -rvztPhe ssh westgroup.ilhanet.com:code/westgroup-v1/composer.json /home/luciano/code/westgroup-v1/composer.json
 
 rsync -rvztPhe ssh /home/luciano/code/westgroup-v1/.env.production westgroup.ilhanet.com:code/westgroup-v1/.env && \
 git cmt || true && ssh westgroup.ilhanet.com

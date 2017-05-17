@@ -890,12 +890,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/lucianobapo/erpnet-saas.git",
-                "reference": "9b3c0b317ace33c7f1070de8fc9207fb51def8f1"
+                "reference": "af1d26610d043ee3b094228c05608619a4259fb5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/lucianobapo/erpnet-saas/zipball/9b3c0b317ace33c7f1070de8fc9207fb51def8f1",
-                "reference": "9b3c0b317ace33c7f1070de8fc9207fb51def8f1",
+                "url": "https://api.github.com/repos/lucianobapo/erpnet-saas/zipball/af1d26610d043ee3b094228c05608619a4259fb5",
+                "reference": "af1d26610d043ee3b094228c05608619a4259fb5",
                 "shasum": ""
             },
             "require": {
@@ -943,7 +943,7 @@
                 "source": "https://github.com/lucianobapo/erpnet-saas/tree/master",
                 "issues": "https://github.com/lucianobapo/erpnet-saas/issues"
             },
-            "time": "2017-05-13 21:26:05"
+            "time": "2017-05-16 16:57:05"
         },
         {
             "name": "jakub-onderka/php-console-color",
@@ -1094,16 +1094,16 @@
         },
         {
             "name": "laravel/framework",
-            "version": "v5.4.22",
+            "version": "v5.4.23",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "fc5c7a18644f231bcb8d02f4ec2f3a2517f5015d"
+                "reference": "ad82327705658dbf5f0ce72805caa950dfbe150d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/fc5c7a18644f231bcb8d02f4ec2f3a2517f5015d",
-                "reference": "fc5c7a18644f231bcb8d02f4ec2f3a2517f5015d",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/ad82327705658dbf5f0ce72805caa950dfbe150d",
+                "reference": "ad82327705658dbf5f0ce72805caa950dfbe150d",
                 "shasum": ""
             },
             "require": {
@@ -1219,7 +1219,7 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2017-05-08 21:45:45"
+            "time": "2017-05-11 20:10:35"
         },
         {
             "name": "laravel/tinker",
@@ -2119,16 +2119,16 @@
         },
         {
             "name": "psy/psysh",
-            "version": "v0.8.3",
+            "version": "v0.8.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/bobthecow/psysh.git",
-                "reference": "1dd4bbbc64d71e7ec075ffe82b42d9e096dc8d5e"
+                "reference": "17cf432bb80d9198df239b80d00a29155bd74d82"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/bobthecow/psysh/zipball/1dd4bbbc64d71e7ec075ffe82b42d9e096dc8d5e",
-                "reference": "1dd4bbbc64d71e7ec075ffe82b42d9e096dc8d5e",
+                "url": "https://api.github.com/repos/bobthecow/psysh/zipball/17cf432bb80d9198df239b80d00a29155bd74d82",
+                "reference": "17cf432bb80d9198df239b80d00a29155bd74d82",
                 "shasum": ""
             },
             "require": {
@@ -2188,7 +2188,7 @@
                 "interactive",
                 "shell"
             ],
-            "time": "2017-03-19 21:40:44"
+            "time": "2017-05-12 15:41:55"
         },
         {
             "name": "ramsey/uuid",
