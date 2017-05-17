@@ -27,6 +27,7 @@ chmod +x permissions.sh && \
 sudo ./permissions.sh
 ```
 
+
 ## Comandos para iniciar o desenvolvimento
 ```shell
 base_dir=/home/luciano/ && \
