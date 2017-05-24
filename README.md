@@ -3,7 +3,7 @@
 
 ## Comandos para iniciar
 ```shell
-rsync -rvztPhe ssh /home/luciano/code/westgroup-v1/.env.production westgroup.ilhanet.com:code/westgroup-v1/.env && \
+rsync -rvztPhe ssh /home/luciano/code/westgroup-v1/.env.production essencialy.com:code/westgroup-v1/.env && \
 ssh westgroup.ilhanet.com
 cd /home/luciano/code/ && \
 git clone https://github.com/lucianobapo/westgroup-v1.git && \
