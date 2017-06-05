@@ -59,13 +59,13 @@ if [ -h ${packages_dir}erpnet-permissions ]; then cd ${code_dir}erpnet-permissio
 if [ -h ${packages_dir}erpnet-saas ]; then cd ${code_dir}erpnet-saas && git cmt; fi || true && \
 if [ -h ${packages_dir}erpnet-migrates ]; then cd ${code_dir}erpnet-migrates && git cmt; fi || true && \
 if [ -h ${packages_dir}erpnet-models ]; then cd ${code_dir}erpnet-models && git cmt; fi || true && \
-cd ${code_dir}westgroup-v1 && composer update ilhanet/erpnet-models ilhanet/erpnet-migrates ilhanet/erpnet-saas ilhanet/erpnet-permissions --prefer-source --profile --root-reqs
+    cd ${code_dir}westgroup-v1 && composer update ilhanet/erpnet-models ilhanet/erpnet-migrates ilhanet/erpnet-saas ilhanet/erpnet-permissions --prefer-source --profile --root-reqs
 ```
 
 ## Subir docker
 ```shell
 cd /home/luciano/code/docker-lemp && sudo docker-compose up
-```
+``` 
 
 ## Criar banco de dados postgresql
 ```sql

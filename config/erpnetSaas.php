@@ -119,7 +119,8 @@ return [
         'name' => 'Funcionários',
         'apiUrl' => 'partner',
         'columns' => [
-            [ 'name' => 'id',  'displayName' => 'Id',
+            [ 'name' => 'id',
+                'displayName' => 'Id',
                 'formInputType' => 'text',
                 'formInputPlaceholder' => '',
                 'newItemModel' => '',

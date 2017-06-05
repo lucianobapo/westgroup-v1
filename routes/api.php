@@ -35,5 +35,7 @@ $router
                 $router->resource('cursoExterno', 'CursoExternoController');
                 $router->resource('gestao', 'GestaoController');
                 $router->resource('fornecedores', 'FornecedoresController');
+                $router->resource('sala_aula', 'SalaAulaController');
+                $router->resource('instrutor', 'InstrutorController');
             });
     });
