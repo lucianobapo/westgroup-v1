@@ -24,6 +24,7 @@ rsync -rvztPhe ssh westgroup.ilhanet.com:code/westgroup-v1/composer.json /home/l
 
 rsync -rvztPhe ssh /home/luciano/code/westgroup-v1/.env.production westgroup.ilhanet.com:code/westgroup-v1/.env && \
 git cmt || true && ssh westgroup.ilhanet.com
+git cmt || true && ssh essencialy.com
 cd /home/luciano/code/westgroup-v1 && git pull && composer install && \
 php artisan vendor:publish --tag=publicSaas && \
 php artisan vendor:publish --tag=erpnetPermissions && \
