@@ -30,7 +30,9 @@ return [
             'fields' => [
                 'id',
                 'nome',
-                'funcao',
+                'funcao'=>[
+                    'displayName'=>'Função'
+                ],
                 'idiomas',
             ],
         ],
@@ -38,16 +40,36 @@ return [
             'routeLinkName' => 'Gestão de Curso / Treinamento',
             'fields' => [
                 'id',
-                'nome',
-                'curso',
-                'tipo',
-                'periodo',
-                'duracao',
-                'validade',
-                'status',
-                'nota_teorica',
-                'nota_pratica',
-                'certificado',
+                'nome'=>[
+                    'displayName'=>'Nome do Aluno'
+                ],
+                'curso'=>[
+                    'displayName'=>'Curso',
+                ],
+                'tipo'=>[
+                    'displayName'=>'Tipo'
+                ],
+                'periodo'=>[
+                    'displayName'=>'Período'
+                ],
+                'duracao'=>[
+                    'displayName'=>'Duração'
+                ],
+                'validade'=>[
+                    'displayName'=>'Expiration'
+                ],
+                'status'=>[
+                    'displayName'=>'Status'
+                ],
+                'nota_teorica'=>[
+                    'displayName'=>'Nota Teórica'
+                ],
+                'nota_pratica'=>[
+                    'displayName'=>'Nota Prática'
+                ],
+                'certificado'=>[
+                    'displayName'=>'Certificado'
+                ],
             ],
         ],
         'curso_externo' => [
@@ -56,8 +78,12 @@ return [
             'fields' => [
                 'id',
                 'nome',
-                'carga_horaria',
-                'preco',
+                'carga_horaria'=>[
+                    'displayName'=>'Duration',
+                ],
+                'preco'=>[
+                    'displayName'=>'Price',
+                ],
                 'empresa',
                 'validade',
                 'anexo',
@@ -69,7 +95,9 @@ return [
             'fields' => [
                 'id',
                 'nome',
-                'carga_horaria',
+                'carga_horaria'=>[
+                    'displayName'=>'Duration',
+                ],
                 'holograma',
                 'validade',
                 'anexo',
@@ -79,23 +107,37 @@ return [
             'fields' => [
                 'id',
                 'fornecedor',
-                'nome',
-                'cpf_cnpj',
+                'nome'=>[
+                    'displayName'=>'Nome / Razão Social',
+                ],
+                'cpf_cnpj'=>[
+                    'displayName'=>'CPF / CNPJ',
+                ],
                 'fantasia',
-                'insc_estadual',
-                'insc_municipal',
+                'insc_estadual'=>[
+                    'displayName'=>'Inscrição Estadual',
+                ],
+                'insc_municipal'=>[
+                    'displayName'=>'Inscrição Municipal',
+                ],
                 'endereco',
-                'numero',
+                'numero'=>[
+                    'displayName'=>'Número',
+                ],
                 'complemento',
                 'bairro',
                 'cidade',
                 'estado',
-                'pais',
+                'pais'=>[
+                    'displayName'=>'País',
+                ],
                 'contato',
                 'telefone',
                 'celular',
                 'email',
-                'preco',
+                'preco'=>[
+                    'displayName'=>'Price',
+                ],
             ],
         ],
         'users' => [
@@ -103,18 +145,18 @@ return [
             'routePrefix' => 'user',
             'fields' => [
                 'id',
-                'mandante',
+//                'mandante',
                 'name',
-                'avatar',
-                'password',
-                'username',
+//                'avatar',
+//                'password',
+//                'username',
                 'email',
-                'provider',
-                'provider_id',
-                'activation_code',
-                'active',
-                'partner',
-                'providers',
+//                'provider',
+//                'provider_id',
+//                'activation_code',
+//                'active',
+//                'partner',
+//                'providers',
             ],
         ],
 //        'subscriptions' => [
@@ -236,47 +278,70 @@ return [
             'routeLinkName' => 'Funcionários',
             'routePrefix' => 'partner',
             'fields' => [
-                'id' => [
-                    'header' => true,
-                    'customShow' => function ($item) {
-                        return $item['nome'];
-                    },
+//                'id' => [
+//                    'header' => true,
+//                    'customShow' => function ($item) {
+//                        return $item['nome'];
+//                    },
+//                ],
+//                'mandante',
+                'id',
+                'nome'=>[
+                    'displayName'=>'Name'
                 ],
-                'mandante',
-                'user_id',
-                'nome',
-                'admissao',
+                'data_nascimento'=>[
+                    'displayName'=>'Birth date'
+                ],
+                'admissao'=>[
+                    'displayName'=>'Data de Admissão'
+                ],
                 'cpf',
                 'identidade',
                 'passaporte',
-                'matricula',
-                'endereco',
-                'numero',
+                'matricula'=>[
+                    'displayName'=>'Matrícula'
+                ],
+                'endereco'=>[
+                    'displayName'=>'Endereço'
+                ],
+                'numero'=>[
+                    'displayName'=>'Número'
+                ],
                 'complemento',
                 'bairro',
                 'cidade',
                 'estado',
-                'pais',
-                'gerencia',
+                'pais'=>[
+                    'displayName'=>'País'
+                ],
+                'gerencia'=>[
+                    'displayName'=>'Gerência'
+                ],
                 'unidade',
                 'departamento',
-                'funcao',
-                'telefone1',
-                'telefone2',
-                'email',
-                'partnerSharedStats' => [
-//                    'label' => t('Status'),
-                    'customShow' => function ($item) {
-                        if (count($item['partnerSharedStats']) > 0) {
-                            $line = '';
-                            foreach ($item['partnerSharedStats'] as $sharedStat) {
-                                $line = $line . $sharedStat['descricao'] . ', ';
-                            }
-                            return substr($line, 0, -2);
-                        } else
-                            return t('No Status');
-                    },
+                'funcao'=>[
+                    'displayName'=>'Função'
                 ],
+                'telefone1'=>[
+                    'displayName'=>'Telefone 1'
+                ],
+                'telefone2'=>[
+                    'displayName'=>'Telefone 2'
+                ],
+                'email',
+//                'partnerSharedStats' => [
+////                    'label' => t('Status'),
+//                    'customShow' => function ($item) {
+//                        if (count($item['partnerSharedStats']) > 0) {
+//                            $line = '';
+//                            foreach ($item['partnerSharedStats'] as $sharedStat) {
+//                                $line = $line . $sharedStat['descricao'] . ', ';
+//                            }
+//                            return substr($line, 0, -2);
+//                        } else
+//                            return t('No Status');
+//                    },
+//                ],
             ],
         ],
         'partner_shared_stat' => [
