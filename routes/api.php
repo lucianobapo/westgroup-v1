@@ -37,5 +37,6 @@ $router
                 $router->resource('fornecedores', 'FornecedoresController');
                 $router->resource('sala_aula', 'SalaAulaController');
                 $router->resource('instrutor', 'InstrutorController');
+                $router->resource('agendaTreinamento', 'AgendaTreinamentoController');
             });
     });

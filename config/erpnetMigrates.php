@@ -18,6 +18,81 @@ return [
          *   ],
          * ],
          */
+        'agenda_treinamento' => [
+            'routeLinkName' => 'Agenda de Treinamento',
+            'routePrefix' => 'agendaTreinamento',
+            'fields' => [
+                'id',
+                'nome'=>[
+                    'displayName'=>'Nome do Funcionário'
+                ],
+                'data'=>[
+                    'displayName'=>'Data do Treinamento'
+                ],
+                'empresa'=>[
+                    'displayName'=>'Empresa de Treinamento'
+                ],
+                'transporte'=>[
+                    'displayName'=>'Transporte'
+                ],
+                'nome_transporte'=>[
+                    'displayName'=>'Nome da Empresa de Transporte'
+                ],
+                'hotel'=>[
+                    'displayName'=>'Hotel'
+                ],
+                'nome_hotel'=>[
+                    'displayName'=>'Nome do Hotel'
+                ],
+                'curso1'=>[
+                    'displayName'=>'Curso 1'
+                ],
+                'curso1_data'=>[
+                    'displayName'=>'Curso 1 - Data'
+                ],
+                'curso1_duração'=>[
+                    'displayName'=>'Curso 1 - Duração'
+                ],
+                'curso1_nome_sala'=>[
+                    'displayName'=>'Curso 1 - Nome da Sala'
+                ],
+                'curso1_instrutor'=>[
+                    'displayName'=>'Curso 1 - Instrutor'
+                ],
+
+                'curso2'=>[
+                    'displayName'=>'Curso 2'
+                ],
+                'curso2_data'=>[
+                    'displayName'=>'Curso 2 - Data'
+                ],
+                'curso2_duração'=>[
+                    'displayName'=>'Curso 2 - Duração'
+                ],
+                'curso2_nome_sala'=>[
+                    'displayName'=>'Curso 2 - Nome da Sala'
+                ],
+                'curso2_instrutor'=>[
+                    'displayName'=>'Curso 2 - Instrutor'
+                ],
+
+                'curso3'=>[
+                    'displayName'=>'Curso 3'
+                ],
+                'curso3_data'=>[
+                    'displayName'=>'Curso 2 - Data'
+                ],
+                'curso3_duração'=>[
+                    'displayName'=>'Curso 3 - Duração'
+                ],
+                'curso3_nome_sala'=>[
+                    'displayName'=>'Curso 3 - Nome da Sala'
+                ],
+                'curso3_instrutor'=>[
+                    'displayName'=>'Curso 3 - Instrutor'
+                ],
+            ],
+        ],
         'sala_aula' => [
             'routeLinkName' => 'Sala de Aula',
             'fields' => [
