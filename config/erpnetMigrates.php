@@ -143,7 +143,8 @@ return [
                     'displayName'=>'Nota Prática'
                 ],
                 'certificado'=>[
-                    'displayName'=>'Certificado'
+                    'displayName'=>'Certificado',
+                    'formInputType'=>'file'
                 ],
             ],
         ],

@@ -9,6 +9,7 @@
         "php": ">=5.6.4",
         "dingo/api": "dev-master",
         "barryvdh/laravel-translation-manager": "^0.2.8",
+        "ilhanet/erpnet-file-manager": "dev-master",
         "ilhanet/erpnet-permissions": "dev-master",
         "ilhanet/erpnet-migrates": "dev-master",
         "ilhanet/erpnet-models": "dev-master",
