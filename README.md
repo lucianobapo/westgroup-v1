@@ -40,6 +40,7 @@ code_dir=${base_dir}code/ && \
 packages_dir=${code_dir}westgroup-v1/packages/ && \
 if [ ! -d ${packages_dir} ]; then mkdir -p ${packages_dir}; fi && \
 if [ ! -h ${packages_dir}configs ]; then ln -s ${base_dir}configs ${packages_dir}configs; fi && \
+if [ ! -h ${packages_dir}my-app ]; then ln -s ${code_dir}my-app ${packages_dir}my-app; fi && \
 if [ ! -h ${packages_dir}erpnet-permissions ]; then ln -s ${code_dir}erpnet-permissions ${packages_dir}erpnet-permissions; fi && \
 if [ ! -h ${packages_dir}erpnet-saas ]; then ln -s ${code_dir}erpnet-saas ${packages_dir}erpnet-saas; fi && \
 if [ ! -h ${packages_dir}erpnet-migrates ]; then ln -s ${code_dir}erpnet-migrates ${packages_dir}erpnet-migrates; fi && \

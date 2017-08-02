@@ -420,6 +420,18 @@ return [
 //                ],
             ],
         ],
+
+        'alerta_email' => [
+            'routeLinkName' => 'Alertas de Email',
+            'routePrefix' => 'alerta',
+            'fields' => [
+                'id',
+                'email',
+                'data',
+                'mensagem',
+            ],
+        ],
+
         'partner_shared_stat' => [
             'tabDisplay'=>false,
         ],
